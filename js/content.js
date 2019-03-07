@@ -26,13 +26,14 @@ class Content {
         let b1 = 25;
         res.write("<h3>Legnagyobb közös osztó (LNKO) meghatározása:</h3>");
         res.write("<p>Az 'a' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='sorszam1' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
             `value='${a1}'><br>`);
         res.write("<p>Az 'b' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='sorszam2' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue; '" +
             `value='${b1}'><br><br>`);
+        res.write("<button type = 'button' name = 'Gomb'>Gomb</button><br><br>");
         while (a1 !== b1) {
             if (a1 > b1)
                 a1 = a1 - b1;
@@ -87,7 +88,7 @@ class Content {
         // Console.WriteLine(" = {0}", faktor);
         // Console.ReadKey();
         res.write("<h3>Faktoriális meghatározása:</h3>");
-        let n = 5;
+        const n = 5;
         let faktor = 1;
         res.write("<p>Faktoriális meghatározása: " +
             " <input type='number' name='sorszam' style='font-family:Courier;" +

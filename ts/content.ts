@@ -13,8 +13,6 @@ export default class Content {
         // res.write("<a href='https://github.com/nitslaszlo/JedlikTsTemplate' target='_blank'>" +
         //     "https://github.com/nitslaszlo/JedlikTsTemplate</a><br>");
 
-
-
         // Console.WriteLine("Legnagyobb közös osztó (LNKO) meghatározása:");
         // Console.Write("a=");
         // ulong a = ulong.Parse(Console.ReadLine());
@@ -28,24 +26,22 @@ export default class Content {
         //     Console.WriteLine("A két szám LNKO-ja: {0}", a);
         //     Console.ReadKey();
 
-
-
         let a1: number = 10;
         let b1: number = 25;
         res.write("<h3>Legnagyobb közös osztó (LNKO) meghatározása:</h3>");
         res.write("<p>Az 'a' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='sorszam1' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
             `value='${a1}'><br>`);
 
         res.write("<p>Az 'b' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='sorszam2' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue; '" +
             `value='${b1}'><br><br>`);
 
+        res.write("<button type = 'button' name = 'Gomb'>Gomb</button><br><br>");
 
         while (a1 !== b1) {
-
 
             if (a1 > b1) a1 = a1 - b1;
             else b1 = b1 - a1;
@@ -70,7 +66,6 @@ export default class Content {
         // } while (m != 0);
         // Console.WriteLine("A két szám LNKO-ja: {0}", a);
         // Console.ReadKey();
-
 
         res.write("<h3>Legnagyobb közös osztó (LNKO) meghatározása:</h3>");
 
@@ -99,7 +94,6 @@ export default class Content {
 
         res.write("<br><br><br>");
 
-
         // Console.WriteLine("Faktoriális meghatározása");
         // Console.Write("n=");
         // byte n = byte.Parse(Console.ReadLine());
@@ -113,10 +107,9 @@ export default class Content {
         // Console.WriteLine(" = {0}", faktor);
         // Console.ReadKey();
 
-
         res.write("<h3>Faktoriális meghatározása:</h3>");
 
-        let n: number = 5;
+        const n: number = 5;
         let faktor: number = 1;
         res.write("<p>Faktoriális meghatározása: " +
             " <input type='number' name='sorszam' style='font-family:Courier;" +
