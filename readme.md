@@ -1,6 +1,6 @@
-#Házi feladat
+# Házi feladat
 ciklusok 
 C# replikák Ts nyelven
 
-##Feladat
+## Feladat
 Felhasználó által bekért adatokkal való operálás a ciklusokkal
