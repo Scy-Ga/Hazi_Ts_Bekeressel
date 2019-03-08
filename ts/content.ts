@@ -17,8 +17,8 @@ export default class Content {
         var m: string = query.m === undefined ? "0" : (query.m as string);
         var a: number = query.a === undefined ? 10 : parseInt((query.a as string), 10);
         var b: number = query.b === undefined ? 15 : parseInt((query.b as string), 10);
-        let a1: number = query.a1 === undefined ? 10 : parseInt((query.a1 as string), 10);
-        let b1: number = query.b1 === undefined ? 15 : parseInt((query.b1 as string), 10);        
+        var a1: number = query.a1 === undefined ? 10 : parseInt((query.a1 as string), 10);
+        var b1: number = query.b1 === undefined ? 15 : parseInt((query.b1 as string), 10);
         var n: number = query.n === undefined ? 5 : parseInt((query.n as string), 10);
         var faktor: number = query.f === undefined ? 1 : parseInt((query.f as string), 10);
 
@@ -80,16 +80,16 @@ export default class Content {
 
         // let a2: number = 12;
         // let b2: number = 25;
-         let mEx: number = parseInt(m, 10);
+         var mEx: number = parseInt(m, 10);
          
 
         res.write("<p>Az 'a' érték megadása: " +
-            " <input type='number' name='a' style='font-family:Courier;" +
+            " <input type='number' name='a1' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
             `value='${a1}' onChange = 'this.form.submit();'><br>`);
 
         res.write("<p>Az 'b' érték megadása: " +
-            " <input type='number' name='b' style='font-family:Courier;" +
+            " <input type='number' name='b1' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue; '" +
             `value='${b1}' onChange = 'this.form.submit();'><br><br>`);
 
