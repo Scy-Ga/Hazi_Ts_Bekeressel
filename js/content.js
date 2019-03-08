@@ -1,15 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const url = require("url");
 class Content {
     content(req, res) {
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-        // res.write("<h1 style='color: red;'>Hello Node.js!</h1>");
-        // res.write("<h1 style='color: green;'>Hello TypeScript!</h1>");
-        // res.write("<h1 style='color: blue;'>Hello Heroku!</h1>");
-        // res.write("<h1 style='color: black;'>Hello Jedlik!</h1>");
-        // res.write("<b>Fejlesztői környezet telepítésének leírása, forráskód GitHub repository:</b><br>");
-        // res.write("<a href='https://github.com/nitslaszlo/JedlikTsTemplate' target='_blank'>" +
-        //     "https://github.com/nitslaszlo/JedlikTsTemplate</a><br>");
+        res.write("<!DOCTYPE html>");
+        res.write("<html lang='hu'><head><title>Házi Feladat</title></head>");
+        res.write("<body><pre style='font-family: monospace;'>");
+        res.write("<form style='font-family: Courier; font-size:16px; background-color: LightGray;'>");
+        const query = url.parse(req.url, true).query;
+        var m = query.m === undefined ? "0" : query.m;
+        var a = query.a === undefined ? 10 : parseInt(query.a, 10);
+        var b = query.b === undefined ? 15 : parseInt(query.b, 10);
+        let a1 = query.a1 === undefined ? 10 : parseInt(query.a1, 10);
+        let b1 = query.b1 === undefined ? 15 : parseInt(query.b1, 10);
+        var n = query.n === undefined ? 5 : parseInt(query.n, 10);
+        var faktor = query.f === undefined ? 1 : parseInt(query.f, 10);
         // Console.WriteLine("Legnagyobb közös osztó (LNKO) meghatározása:");
         // Console.Write("a=");
         // ulong a = ulong.Parse(Console.ReadLine());
@@ -22,25 +28,25 @@ class Content {
         // }
         //     Console.WriteLine("A két szám LNKO-ja: {0}", a);
         //     Console.ReadKey();
-        let a1 = 10;
-        let b1 = 25;
+        // let a1: number = 10;
+        // let b1: number = 25;
         res.write("<h3>Legnagyobb közös osztó (LNKO) meghatározása:</h3>");
         res.write("<p>Az 'a' érték megadása: " +
-            " <input type='number' name='sorszam1' style='font-family:Courier;" +
+            " <input type='number' name='a' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
-            `value='${a1}'><br>`);
+            `value='${a}' onChange = 'this.form.submit();'><br>`);
         res.write("<p>Az 'b' érték megadása: " +
-            " <input type='number' name='sorszam2' style='font-family:Courier;" +
+            " <input type='number' name='b' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue; '" +
-            `value='${b1}'><br><br>`);
-        res.write("<button type = 'button' name = 'Gomb'>Gomb</button><br><br>");
-        while (a1 !== b1) {
-            if (a1 > b1)
-                a1 = a1 - b1;
+            `value='${b}' onChange = 'this.form.submit();'><br><br>`);
+        // res.write("<button type = 'button' name = 'Gomb'>Gomb</button><br><br>");
+        while (a !== b) {
+            if (a > b)
+                a = a - b;
             else
-                b1 = b1 - a1;
+                b = b - a;
         }
-        res.write(`A két szám LNKO-ja: ${a1}`);
+        res.write(`A két szám LNKO-ja: ${a}`);
         res.write("<br><br><br>");
         // Console.WriteLine("Legnagyobb közös osztó (LNKO) meghatározása:");
         // Console.Write("a=");
@@ -57,23 +63,23 @@ class Content {
         // Console.WriteLine("A két szám LNKO-ja: {0}", a);
         // Console.ReadKey();
         res.write("<h3>Legnagyobb közös osztó (LNKO) meghatározása:</h3>");
-        let a2 = 12;
-        let b2 = 25;
-        let m;
+        // let a2: number = 12;
+        // let b2: number = 25;
+        let mEx = parseInt(m, 10);
         res.write("<p>Az 'a' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='a' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
-            `value='${a2}'><br>`);
+            `value='${a1}' onChange = 'this.form.submit();'><br>`);
         res.write("<p>Az 'b' érték megadása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='b' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue; '" +
-            `value='${b2}'><br><br>`);
+            `value='${b1}' onChange = 'this.form.submit();'><br><br>`);
         do {
-            m = a2 % b2;
-            a2 = b2;
-            b2 = m;
-        } while (m !== 0);
-        res.write(`A két szám LNKO-ja: ${a2}`);
+            mEx = a1 % b1;
+            a1 = b1;
+            b1 = mEx;
+        } while (mEx !== 0);
+        res.write(`A két szám LNKO-ja: ${a1}`);
         res.write("<br><br><br>");
         // Console.WriteLine("Faktoriális meghatározása");
         // Console.Write("n=");
@@ -88,19 +94,19 @@ class Content {
         // Console.WriteLine(" = {0}", faktor);
         // Console.ReadKey();
         res.write("<h3>Faktoriális meghatározása:</h3>");
-        const n = 5;
-        let faktor = 1;
+        // const n: number = 5;
+        // let faktor: number = 1;
         res.write("<p>Faktoriális meghatározása: " +
-            " <input type='number' name='sorszam' style='font-family:Courier;" +
+            " <input type='number' name='n' style='font-family:Courier;" +
             "font - size: inherit; background:Lightblue;'" +
-            `value='${n}'><br><br>`);
+            `value='${n}' onChange = 'this.form.submit();'><br><br>`);
         res.write(n + "! = 1");
         for (let i = 2; i <= n; i++) {
             res.write(" * " + i);
             faktor = faktor * i;
         }
         res.write(" = " + faktor);
-        res.end();
+        res.end("</form></body></html>");
     }
 }
 exports.default = Content;
