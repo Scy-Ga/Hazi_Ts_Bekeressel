@@ -3,4 +3,4 @@ ciklusok
 C# replikák Ts nyelven
 
 ## Feladat
-Felhasználó által bekért adatokkal való operálás a ciklusokkal a
+Felhasználó által bekért adatokkal való operálás a ciklusokkal alpha
